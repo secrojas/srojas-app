@@ -12,8 +12,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.5",
+    "satori": "^0.26.0",
     "tailwindcss": "^4.2.2"
   }
 }
