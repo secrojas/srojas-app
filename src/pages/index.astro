@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 backdrop-blur-md bg-[#0a0a0f]/80">
+    <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <span class="text-sm font-medium text-white/70 tracking-wide">srojas.app</span>
+      <div class="flex items-center gap-6 text-sm text-white/50">
+        <a href="#hub" class="hover:text-white/90 transition-colors">Hub</a>
+        <a href="#stack" class="hover:text-white/90 transition-colors">Stack</a>
+        <a href="https://srojasweb.dev" target="_blank" rel="noopener noreferrer"
+           class="text-indigo-400 hover:text-indigo-300 transition-colors">
+          srojasweb.dev
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-indigo-600/10 blur-[120px]"></div>
+      </div>
+
+      <div class="relative max-w-3xl mx-auto text-center">
+        <p class="text-indigo-400 text-sm font-medium tracking-widest uppercase mb-6">
+          Desarrollador Full Stack
+        </p>
+
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-light leading-tight mb-6">
+          <span class="gradient-text">Sebastian Rojas</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-white/50 font-light leading-relaxed max-w-xl mx-auto mb-10">
+          Construyo aplicaciones web con arquitecturas limpias, código que escala
+          y atención a los detalles que importan.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#hub"
+             class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded-lg transition-colors">
+            Ver Hub
+          </a>
+          <a href="https://srojasweb.dev" target="_blank" rel="noopener noreferrer"
+             class="px-6 py-3 border border-white/10 hover:border-white/25 text-white/70 hover:text-white text-sm font-medium rounded-lg transition-colors">
+            Portfolio completo
+          </a>
+        </div>
+
+        <div class="mt-16 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-white/30 text-sm">
+          <span>Laravel</span>
+          <span class="text-white/10">·</span>
+          <span>Vue 3</span>
+          <span class="text-white/10">·</span>
+          <span>TypeScript</span>
+          <span class="text-white/10">·</span>
+          <span>Inertia.js</span>
+          <span class="text-white/10">·</span>
+          <span>Astro</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HUB -->
+    <section id="hub" class="py-24 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-16">
+          <p class="text-indigo-400 text-sm font-medium tracking-widest uppercase mb-3">Proyecto principal</p>
+          <h2 class="text-4xl sm:text-5xl font-light text-white mb-5">Hub</h2>
+          <p class="text-white/50 text-lg font-light max-w-2xl leading-relaxed">
+            Plataforma de gestión freelance construida desde cero. Clientes, tareas, facturación,
+            notas y portal de acceso para clientes — todo en un solo lugar.
+          </p>
+        </div>
+
+        <!-- Módulos -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+          {[
+            {
+              icon: '▦',
+              title: 'Tablero Kanban',
+              desc: 'Gestión de tareas por estado con drag & drop, prioridades y registro de horas por tarea.',
+            },
+            {
+              icon: '◎',
+              title: 'Clientes',
+              desc: 'Ficha completa: stack tecnológico, valor hora, historial de tareas y facturación asociada.',
+            },
+            {
+              icon: '◈',
+              title: 'Facturación',
+              desc: 'Facturas con ítems detallados, estados de pago y resumen mensual de lo cobrado.',
+            },
+            {
+              icon: '◇',
+              title: 'Notas',
+              desc: 'Base de conocimiento con carpetas anidadas, editor WYSIWYG (Tiptap) y búsqueda full-text.',
+            },
+            {
+              icon: '◉',
+              title: 'Portal del cliente',
+              desc: 'Acceso exclusivo por invitación firmada. El cliente se registra con su propia contraseña.',
+            },
+            {
+              icon: '◬',
+              title: 'Arquitectura limpia',
+              desc: 'Repository/Service pattern, contratos (interfaces), Enums tipados, Form Requests.',
+            },
+          ].map((mod) => (
+            <div class="card-hover bg-[#111118] border border-[#1e1e2e] rounded-xl p-5">
+              <div class="text-xl text-indigo-400/60 mb-3 font-mono">{mod.icon}</div>
+              <h3 class="text-white font-medium mb-2">{mod.title}</h3>
+              <p class="text-white/40 text-sm leading-relaxed">{mod.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Code snippet -->
+        <div class="bg-[#111118] border border-[#1e1e2e] rounded-xl overflow-hidden">
+          <div class="flex items-center gap-2 px-5 py-3 border-b border-[#1e1e2e] bg-[#0d0d16]">
+            <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
+            <span class="ml-3 text-white/30 text-xs font-mono">NoteService.php — Repository pattern</span>
+          </div>
+          <div class="code-block p-5 text-white/70">
+<pre><code><span class="text-purple-400">class</span> <span class="text-yellow-300">NoteService</span>
+<span class="text-white/40">{</span>
+    <span class="text-purple-400">public function</span> <span class="text-blue-300">__construct</span><span class="text-white/40">(</span>
+        <span class="text-purple-400">private readonly</span> <span class="text-yellow-300">NoteRepositoryInterface</span> <span class="text-orange-300">$repository</span><span class="text-white/40">,</span>
+    <span class="text-white/40">) {}</span>
+
+    <span class="text-purple-400">public function</span> <span class="text-blue-300">create</span><span class="text-white/40">(</span><span class="text-purple-400">array</span> <span class="text-orange-300">$data</span><span class="text-white/40">):</span> <span class="text-yellow-300">Note</span>
+    <span class="text-white/40">{</span>
+        <span class="text-orange-300">$data</span><span class="text-white/40">[</span><span class="text-green-400">'extracto'</span><span class="text-white/40">] =</span> <span class="text-orange-300">$this</span><span class="text-white/40">-&gt;</span><span class="text-blue-300">generateExcerpt</span><span class="text-white/40">(</span><span class="text-orange-300">$data</span><span class="text-white/40">[</span><span class="text-green-400">'contenido'</span><span class="text-white/40">] ??</span> <span class="text-green-400">''</span><span class="text-white/40">);</span>
+
+        <span class="text-purple-400">return</span> <span class="text-orange-300">$this</span><span class="text-white/40">-&gt;</span><span class="text-orange-300">repository</span><span class="text-white/40">-&gt;</span><span class="text-blue-300">create</span><span class="text-white/40">(</span><span class="text-orange-300">$data</span><span class="text-white/40">);</span>
+    <span class="text-white/40">}</span>
+<span class="text-white/40">}</span></code></pre>
+          </div>
+        </div>
+
+        <div class="mt-5 text-center">
+          <a href="https://github.com/secrojas/hub-srojas-showcase" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 text-white/35 hover:text-white/70 text-sm transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            Ver showcase en GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="py-24 px-6 border-t border-white/5">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-indigo-400 text-sm font-medium tracking-widest uppercase mb-3">Tecnologías</p>
+        <h2 class="text-4xl font-light text-white mb-12">Stack principal</h2>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { name: 'Laravel', category: 'Backend', color: 'text-red-400' },
+            { name: 'Vue 3', category: 'Frontend', color: 'text-green-400' },
+            { name: 'Inertia.js', category: 'Bridge SPA', color: 'text-purple-400' },
+            { name: 'TypeScript', category: 'Tipado', color: 'text-blue-400' },
+            { name: 'TailwindCSS', category: 'Estilos', color: 'text-cyan-400' },
+            { name: 'Astro', category: 'Static Sites', color: 'text-orange-400' },
+            { name: 'MySQL', category: 'Base de datos', color: 'text-yellow-400' },
+            { name: 'Vite', category: 'Bundler', color: 'text-indigo-400' },
+          ].map((tech) => (
+            <div class="card-hover bg-[#111118] border border-[#1e1e2e] rounded-xl p-4">
+              <p class={`text-xs font-medium mb-1 ${tech.color}`}>{tech.category}</p>
+              <p class="text-white font-medium">{tech.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MI + LINKS -->
+    <section class="py-24 px-6 border-t border-white/5">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <p class="text-indigo-400 text-sm font-medium tracking-widest uppercase mb-3">Acerca de mí</p>
+            <h2 class="text-4xl font-light text-white mb-5">Hola, soy Sebas.</h2>
+            <p class="text-white/50 leading-relaxed mb-4">
+              Desarrollo aplicaciones web con foco en arquitecturas limpias, código mantenible y
+              experiencias de usuario cuidadas. Me apasiona el diseño de sistemas y los patrones de arquitectura.
+            </p>
+            <p class="text-white/50 leading-relaxed">
+              Hub es mi proyecto personal principal — una herramienta que uso todos los días para
+              gestionar mi trabajo como freelance, y también un laboratorio de buenas prácticas.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <a href="https://srojasweb.dev" target="_blank" rel="noopener noreferrer"
+               class="card-hover group flex items-center gap-4 bg-[#111118] border border-[#1e1e2e] rounded-xl p-5">
+              <div class="w-10 h-10 rounded-lg bg-indigo-600/20 flex items-center justify-center text-indigo-400 shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-white font-medium group-hover:text-indigo-300 transition-colors">srojasweb.dev</p>
+                <p class="text-white/40 text-sm">Portfolio y experiencia completa</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/secrojas" target="_blank" rel="noopener noreferrer"
+               class="card-hover group flex items-center gap-4 bg-[#111118] border border-[#1e1e2e] rounded-xl p-5">
+              <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 shrink-0">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-white font-medium group-hover:text-white/80 transition-colors">github.com/secrojas</p>
+                <p class="text-white/40 text-sm">Proyectos y código</p>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/secrojas" target="_blank" rel="noopener noreferrer"
+               class="card-hover group flex items-center gap-4 bg-[#111118] border border-[#1e1e2e] rounded-xl p-5">
+              <div class="w-10 h-10 rounded-lg bg-blue-600/15 flex items-center justify-center text-blue-400 shrink-0">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-white font-medium group-hover:text-blue-300 transition-colors">linkedin.com/in/secrojas</p>
+                <p class="text-white/40 text-sm">Perfil profesional</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-6 border-t border-white/5">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-white/25 text-sm">srojas.app</p>
+      <p class="text-white/25 text-sm">Hecho con Astro + TailwindCSS</p>
+    </div>
+  </footer>
+</Layout>
